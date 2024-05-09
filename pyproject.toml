@@ -1,6 +1,6 @@
 [project]
 name = "rknntools"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="yuyun", email="15515722313@163.com"},
 ]

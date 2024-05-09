@@ -49,12 +49,15 @@ def check_op_limit(modelname):
                           'SpaceToDetph', 'Split', 'Sqrt', 'Squeeze', 'Tile', 'Upsample', 'Not']  # 文档中的CPU算子
     RKNN_152_CPUOPLIST = [item.upper() for item in RKNN_152_CPUOPLIST]
 
+    RKNN_2_NEW_OP_LIST = ['And','GatherElements','Log']
+    RKNN_2_NEW_OP_LIST = [item.upper() for item in RKNN_2_NEW_OP_LIST] #RKNN 2.0.0版本号后支持的新的算子
+
     ONNX_OP = ['Constant', 'Unsqueeze', 'Conv', 'Identity', 'ConstantOfShape', 'Shape','Erf']  # 文档中没有或者名称不匹配，但实际支持的算子
     ONNX_OP = [item.upper() for item in ONNX_OP]
 
     NO_SUPPORT_LIST = []
     for item in operations:
-        if (item.upper() not in RK3566_152_NPUOPLIST) and (item.upper() not in RKNN_152_CPUOPLIST) and (
+        if (item.upper() not in RK3566_152_NPUOPLIST) and (item.upper() not in RKNN_152_CPUOPLIST) and (item.upper() not in RKNN_2_NEW_OP_LIST) and (
                 item.upper() not in ONNX_OP):
             NO_SUPPORT_LIST.append(item)
 
