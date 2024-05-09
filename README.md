@@ -1,10 +1,11 @@
 # rknntools
 
 - rknn模型转换可能会用到的工具
-- RKNNTOOLKIT2版本 >= 1.5.2
+- RKNNTOOLKIT2版本 >= 1.5.2 
+- 2.0.0版本新增了一些用处很大的算子！
+- 可以通过pip安装：`pip install rknntools`
 
 #### 代码说明
-
 
 op_limit.py 包括函数check_op_limit，输入onnx模型，输出算子匹配情况
 
